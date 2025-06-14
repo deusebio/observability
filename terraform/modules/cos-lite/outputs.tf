@@ -25,3 +25,13 @@ output "loki" {
   description = "Outputs from the Loki module"
   value       = module.loki
 }
+
+output "offers" {
+  description = "URL for the various offers"
+  value = {
+    grafana = juju_offer.grafana-dashboards.url,
+    prometheus = juju_offer.prometheus-receive-remote-write.url,
+    loki = juju_offer.loki-logging.url,
+    alertmanager = juju_offer.alertmanager-karma-dashboard.url
+  }
+}

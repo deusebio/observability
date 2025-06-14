@@ -5,6 +5,7 @@ module "ssc" {
   source  = "git::https://github.com/canonical/self-signed-certificates-operator//terraform"
   model   = var.model
   channel = var.channel
+  base    = "ubuntu@22.04"
 }
 
 module "alertmanager" {
